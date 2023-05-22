@@ -25,6 +25,14 @@
     border: 3px solid #7279f9;
 }
 
+.boton{
+    font-family: verdana;
+    background-color: #bbbef8;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 1px solid #7279f9;
+}
+
 .button-collapse{
     background-color: #fcfafa;
     width: 100%;
