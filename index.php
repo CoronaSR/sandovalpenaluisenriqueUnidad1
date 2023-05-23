@@ -30,7 +30,7 @@
 
 
         .buzon{
-            margin: 20px 0px 0px;
+            margin: 0px;
             padding: 40px 20px;
             background-color: #000000;
             text-align: center;
@@ -49,7 +49,7 @@
         .contacto{
             margin: 0px;
             padding: 20px;
-            background-color: #e7e7e7;
+            background-color: #e9efff;
             text-align: center;
         }
 
@@ -66,6 +66,10 @@
             padding: 10px;
             width: 70%;
             margin: 10px;
+        }
+
+        textarea{
+            resize: none;
         }
     </style>
 </head>
@@ -169,23 +173,9 @@
 
 
 
-<!--Buzon-->
-<div class="buzon">
-    <h4>Queremos Escucharte</h4>
-
-    <div>
-        <input class="campo" type="e-mail" name="Correo" placeholder="Introduce tu Correo">
-        <textarea class="campo">Escribe tu opinion</textarea>
-    </div>
-
-    <button class="boton mt-1">Enviar</button>
-</div>
-
-
-
 <!--Mapa del Sitio-->
 <div class="mapa">
-    <h4 class="mb-4">Mapa del Sitio</h4>
+    <h4 class="mb-5">Mapa del Sitio</h4>
     <div class="row" align="start">
         <div class="col-3">
             <div class="mb-2"><b>Servicios</b></div>
@@ -224,6 +214,20 @@
             <ion-icon name="mail"></ion-icon>
         </div>
     </div>
+</div>
+
+
+
+<!--Buzon-->
+<div class="buzon">
+    <h4>Queremos Escucharte</h4>
+
+    <div>
+        <input class="campo" type="e-mail" name="Correo" placeholder="Introduce tu Correo">
+        <textarea class="campo" placeholder="Escribe tu Opinión"></textarea>
+    </div>
+
+    <button class="boton mt-1">Enviar</button>
 </div>
 
     <!-- JS Boostrap -->
