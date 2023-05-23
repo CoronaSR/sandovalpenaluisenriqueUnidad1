@@ -31,9 +31,15 @@
             display: none;
         }
 
-        .change{
+        .recuperarForm{
+            display: none;
+        }
+
+        .change,
+        .ancla-b,
+        .close{
             cursor: pointer;
-            color: lightblue;
+            color: #c3d9fd;
         }
     </style>
 </head>
@@ -44,9 +50,9 @@
     <div class="container" align="center">
         <h1 class="color-title mb-4"><b>A través de la Lectura</b></h1>
 
-        <!--Fomulario de Registro-->
+        <!--Fomulario de Inicio de Sesion-->
         <form method="post" action="" class="loginForm" id="loginForm">
-            <h4 class="mb-3">Iniciar Sesión</h4>
+            <h4 class="color-aditional mb-3"><b>Iniciar Sesión</b></h4>
             <!--Campos del formulario-->
             <input type="e-mail" name="Correo" id="Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
             <input type="password" name="Password" id="Password" class="campo" placeholder="Ingresa tu Contraseña">
@@ -56,14 +62,32 @@
             </div>
             <!--Opcion para cambiar a formulario de Login-->
             <div class="mt-3 change-view">
-                ¿Ya tienes una cuenta? <b class="change">Crear una Cuenta</b>
+                ¿Aun no tienes una cuenta? <b class="change">Crear una Cuenta</b><br>
+                ¿Olvidate tu Contraseña? <b class="ancla-b" id="ancla-b">Recuperar Contraseña</b>
             </div>
         </form>
 
+        <!--Fomulario de Recuperar Contraseña-->
+        <div class="recuperarForm" id="recuperarForm">
+            <div class="row">
+                <div class="col-6">
+                    <h4 class="color-aditional mb-3"><b>Recuperar Contraseña</b></h4>
+                </div>
+                <div class="col-6">
+                    <ion-icon name="close" class="close h3" id="close"></ion-icon>
+                </div>
+            </div>
+            <!--Campos del formulario-->
+            <input type="e-mail" name="Correo" id="Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
+            <!--Boton para Ejecutar-->
+            <div class="mt-3">
+                <button type="sumbit" class="boton">Recuperar</button>
+            </div>
+        </div>
 
         <!--Fomulario de Registro-->
         <form method="post" action="" class="registroForm" id="registroForm">
-            <h4 class="mb-3">Crear Cuenta</h4>
+            <h4 class="color-aditional mb-3"><b>Crear Cuenta</b></h4>
             <!--Campos del formulario-->
             <input type="text" name="Nombre" id="Nombre" class="campo" placeholder="Ingresa tu Nombre" autocomplete="off">
             <input type="e-mail" name="Correo" id="Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
@@ -83,8 +107,22 @@
 </div>
 
 <script type="text/javascript">
+    let loginForm = document.getElementById('loginForm');
+    let recuperarForm = document.getElementById('recuperarForm');
+
     /*Animacion en formularios de Registro y login*/
-    $('.mt-3 b').click(function(){
+    $('#ancla-b').on('click', function() {
+        loginForm.style.display = "none";
+        recuperarForm.style.display = "block";
+    });
+
+    $('#close').on('click', function() {
+        loginForm.style.display = "block";
+        recuperarForm.style.display = "none";
+    });
+
+    /*Animacion en formularios de Registro y login*/
+    $('.change-view .change').click(function(){
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
 </script>

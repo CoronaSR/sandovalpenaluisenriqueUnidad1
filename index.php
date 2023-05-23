@@ -220,7 +220,7 @@
 
 <!--Buzon-->
 <div class="buzon">
-    <h4>Queremos Escucharte</h4>
+    <h4 class="color-title">Queremos Escucharte</h4>
 
     <div>
         <input class="campo" type="e-mail" name="Correo" placeholder="Introduce tu Correo">
