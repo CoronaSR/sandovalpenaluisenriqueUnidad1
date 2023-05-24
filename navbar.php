@@ -29,7 +29,7 @@
 </style>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="img/leer.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="index.php"><img src="img/leer.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       A través de la lectura</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon navdark"></span>
@@ -58,7 +58,7 @@
               <li><a class="dropdown-item" href="#">Ayuda</a></li>
               <li><a class="dropdown-item" href="#">Contacto</a></li>
               <li><a class="dropdown-item" href="#">Mapa</a></li>
-              <li><a class="dropdown-item" href="#">Chat</a></li>
+              <li><a class="dropdown-item" href="chatbot.php">Chat</a></li>
             </ul>
           </div>
         </li>
