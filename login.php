@@ -35,9 +35,8 @@
             display: none;
         }
 
-        .change,
-        .ancla-b,
-        .close{
+        .change_L-C,
+        .change_L-R{
             cursor: pointer;
             color: #c3d9fd;
         }
@@ -51,54 +50,57 @@
         <h1 class="color-title mb-4"><b>A través de la Lectura</b></h1>
 
         <!--Fomulario de Inicio de Sesion-->
-        <form method="post" action="" class="loginForm" id="loginForm">
+        <form method="post" action="" class="loginForm L-R L-C" id="loginForm">
             <h4 class="color-aditional mb-3"><b>Iniciar Sesión</b></h4>
             <!--Campos del formulario-->
-            <input type="e-mail" name="Correo" id="Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
-            <input type="password" name="Password" id="Password" class="campo" placeholder="Ingresa tu Contraseña">
+            <input type="e-mail" name="L-Correo" id="L-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
+            <input type="password" name="L-Contrasena" id="L-Contrasena" class="campo" placeholder="Ingresa tu Contraseña">
             <!--Boton para Ejecutar-->
             <div class="mt-3">
-                <button type="sumbit" class="boton" id="Ingresar">Iniciar Sesion</button>
+                <button type="sumbit" class="boton" name="Loguear">Iniciar Sesion</button>
             </div>
             <!--Opcion para cambiar a formulario de Login-->
             <div class="mt-3 change-view">
-                ¿Aun no tienes una cuenta? <b class="change">Crear una Cuenta</b><br>
-                ¿Olvidate tu Contraseña? <b class="ancla-b" id="ancla-b">Recuperar Contraseña</b>
+                ¿Aun no tienes una cuenta? <b class="change_L-C">Crear una Cuenta</b><br>
+                ¿Olvidate tu Contraseña? <b class="change_L-R" id="ancla-b">Recuperar Contraseña</b>
             </div>
         </form>
 
         <!--Fomulario de Recuperar Contraseña-->
-        <div class="recuperarForm" id="recuperarForm">
+        <div class="recuperarForm L-R">
             <div class="row">
                 <div class="col-6">
                     <h4 class="color-aditional mb-3"><b>Recuperar Contraseña</b></h4>
                 </div>
-                <div class="col-6">
-                    <ion-icon name="close" class="close h3" id="close"></ion-icon>
+                <div class="col-6 change-view">
+                    <ion-icon name="close" class="change_L-R h3"></ion-icon>
                 </div>
             </div>
             <!--Campos del formulario-->
-            <input type="e-mail" name="Correo" id="Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
+            <form method="post" action="">
+            <input type="e-mail" name="R-Correo" id="R-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
             <!--Boton para Ejecutar-->
             <div class="mt-3">
-                <button type="sumbit" class="boton">Recuperar</button>
+                <button type="sumbit" class="boton" name="Recuperar">Recuperar</button>
             </div>
+            </form>
         </div>
 
         <!--Fomulario de Registro-->
-        <form method="post" action="" class="registroForm" id="registroForm">
+        <form method="post" action="" class="registroForm L-C">
             <h4 class="color-aditional mb-3"><b>Crear Cuenta</b></h4>
             <!--Campos del formulario-->
-            <input type="text" name="Nombre" id="Nombre" class="campo" placeholder="Ingresa tu Nombre" autocomplete="off">
-            <input type="e-mail" name="Correo" id="Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
-            <input type="password" name="Password" id="Password" class="campo" placeholder="Ingresa tu Contraseña">
+            <input type="text" name="C-Nombre" id="C-Nombre" class="campo" placeholder="Ingresa tu Nombre" autocomplete="off">
+            <input type="e-mail" name="C-Correo" id="C-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
+            <input type="password" name="C-Contrasena" id="C-Contrasena" class="campo" placeholder="Ingresa tu Contraseña">
+            <input type="password" name="C-RContrasena" id="C-RContrasena" class="campo" placeholder="Repite la Contraseña">
             <!--Boton para Ejecutar-->
             <div class="mt-3">
-                <button type="sumbit" class="boton" id="Registrar">Crear Cuenta</button>
+                <button type="sumbit" class="boton" name="Crear">Crear Cuenta</button>
             </div>
             <!--Opcion para cambiar a formulario de Login-->
             <div class="mt-3 change-view">
-                ¿Ya tienes una cuenta? <b class="change">Iniciar Sesión</b>
+                ¿Ya tienes una cuenta? <b class="change_L-C">Iniciar Sesión</b>
             </div>
         </form>
 
@@ -107,23 +109,13 @@
 </div>
 
 <script type="text/javascript">
-    let loginForm = document.getElementById('loginForm');
-    let recuperarForm = document.getElementById('recuperarForm');
-
-    /*Animacion en formularios de Registro y login*/
-    $('#ancla-b').on('click', function() {
-        loginForm.style.display = "none";
-        recuperarForm.style.display = "block";
-    });
-
-    $('#close').on('click', function() {
-        loginForm.style.display = "block";
-        recuperarForm.style.display = "none";
-    });
-
-    /*Animacion en formularios de Registro y login*/
-    $('.change-view .change').click(function(){
+    /*Cambiar Formulario de Login a Registro y vicebersa*/
+    $('.change-view .change_L-C').click(function(){
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+    /*Cambiar Formulario de Login a Recuperar y vicebersa*/
+    $('.change-view .change_L-R').click(function(){
+        $('.L-R').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
 </script>
 
@@ -135,3 +127,49 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
+<?php
+require_once "funciones.php";
+
+if (isset($_POST['Crear'])) {
+    $C_Nombre = $_POST['C-Nombre'];
+    $C_Correo = $_POST['C-Correo'];
+    $C_Contrasena = $_POST['C-Contrasena'];
+
+    //Funcion para consultar si el correo ya esta registrado
+    $Crear = consulta($C_Correo);
+
+    if ($Crear) {
+        // Alertar que el correo ya esta dado de alta
+    } else {
+        //Realizar el registro
+    }
+}
+
+if (isset($_POST['Recuperar'])) {
+    $R_Correo = $_POST['R-Correo'];
+
+    //Funcion para consultar si el correo ya esta registrado
+    $Recuperar = consulta($R_Correo);
+
+    if ($Recuperar) {
+        //Enviar correo
+    } else {
+        //Alertar de que no existe el correo
+    }
+}
+
+if (isset($_POST['Loguear'])) {
+    $L_Correo = $_POST['L-Correo'];
+    $L_Contrasena = $_POST['L-Correo'];
+
+    //Funcion para consultar si el correo ya esta registrado
+    $Loguear = consulta($L_Correo);
+
+    if ($Loguear) {
+        if
+    } else {
+        //Mensaje de Error en credenciales de acceso
+    }
+}
+?>
