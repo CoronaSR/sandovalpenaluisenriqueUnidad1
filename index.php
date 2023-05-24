@@ -30,9 +30,10 @@
     </style>
 </head>
 <body class="bg-main">
-
+<div>
+     <?php include('navbar.php'); ?>
+</div>
 <div class="view-main">
-
     <div class="container mb-4 text-center">
         <h1 class="font-1 color-title"><b>Nuevos Mundos te Esperan</b></h1>
     </div>
