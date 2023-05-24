@@ -1,6 +1,8 @@
 <?php
-function consulta($Correo){
-	require_once 'conexion.php';
+require_once 'conexion.php';
+
+/*Funcion para consultar a partir del CORREO*/
+function consulta($Correo) {
 
     $conexion= new conexion();
     $query=$conexion->prepare('SELECT * FROM usuarios WHERE correo = :correo');
@@ -13,6 +15,22 @@ function consulta($Correo){
         return $query->fetch(PDO::FETCH_ASSOC);
     } else {
         // Si no se encontró ningún registro, devuelve false
+        return false;
+    }
+}
+
+/*Funcion para hacer el registro de usuario*/
+function registrar($Nombre,$Correo,$Contrasena) {
+    $conexion = new conexion();
+    $Insert = $conexion->prepare('INSERT INTO usuarios(nombre, correo, contrasena) VALUES (:nombre, :correo, :contrasena)');
+    $Insert->bindParam(':nombre',$Nombre);
+    $Insert->bindParam(':correo',$Correo);
+    $Insert->bindParam(':contrasena',$Contrasena);
+    $Insert->execute();
+
+    if ($Insert) {
+        return 1;
+    } else {
         return false;
     }
 }

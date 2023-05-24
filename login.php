@@ -140,9 +140,15 @@ if (isset($_POST['Crear'])) {
     $Crear = consulta($C_Correo);
 
     if ($Crear) {
-        // Alertar que el correo ya esta dado de alta
+        // FALTA: Alertar que el correo ya esta dado de alta
     } else {
-        //Realizar el registro
+        $Registrar = registrar($C_Nombre,$C_Correo,$C_Contrasena);
+
+        if ($Registrar == 1) {
+            //FALTA: Mensaje de Exito u enviar al inicio
+        } else {
+            //FALTA: Mensaje de Error
+        }
     }
 }
 
@@ -153,23 +159,30 @@ if (isset($_POST['Recuperar'])) {
     $Recuperar = consulta($R_Correo);
 
     if ($Recuperar) {
-        //Enviar correo
+        //FALTA: Enviar correo
     } else {
-        //Alertar de que no existe el correo
+        //FALTA: Alertar de que no existe el correo
     }
 }
 
 if (isset($_POST['Loguear'])) {
     $L_Correo = $_POST['L-Correo'];
-    $L_Contrasena = $_POST['L-Correo'];
+    $L_Contrasena = $_POST['L-Contrasena'];
 
     //Funcion para consultar si el correo ya esta registrado
     $Loguear = consulta($L_Correo);
 
     if ($Loguear) {
-        if
+        $Contrasena = $Loguear['contrasena'];
+
+        if ($Contrasena == $L_Contrasena) {
+            //FALTA: Enviar al inicio
+        } else {
+            //FALTA: Mensaje de error
+        }
+
     } else {
-        //Mensaje de Error en credenciales de acceso
+        //FALTA: Mensaje de Error en credenciales de acceso
     }
 }
 ?>
