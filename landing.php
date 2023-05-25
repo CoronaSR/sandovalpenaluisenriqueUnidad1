@@ -30,7 +30,7 @@
 
 <body background="https://wallpaperaccess.com/full/4128940.jpg">
 
-
+<?php include('navbar.php'); ?>
   <!--Columnas responsivas-->
   <div class="container-lg">
 
@@ -172,6 +172,7 @@
                 <div class="col w-auto p-3" width="auto">
 
                   <!--Card 1-->
+                  
                   <div class="col w-100 p-3 ">
                     <div class="card w-100 p-3 img-thumbnail">
                       <img src="imgs/tolkien.jpg" width="auto">
