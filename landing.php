@@ -14,8 +14,6 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
 
-<<<<<<< Updated upstream
-=======
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
   <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
@@ -27,7 +25,6 @@
   <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
 
->>>>>>> Stashed changes
   <title>Librería</title>
 </head>
 
@@ -39,19 +36,11 @@
 
     <div class="container text-center ">
       <div class="row align-items-start">
-<<<<<<< Updated upstream
-        
-
-       
-
-      
-=======
 
 
 
 
 
->>>>>>> Stashed changes
 
 
 
@@ -68,13 +57,7 @@
             </div>
             <div class="carousel-inner ">
               <div class="carousel-item active">
-<<<<<<< Updated upstream
-                <img
-                  src="https://imgix.bustle.com/rehost/2016/9/13/28248303-b76a-41d1-aaf4-07ea339e1988.jpg?w=1200&h=630&fit=crop&crop=faces&fm=jpg"
-                  class="w-75 p-3 img-thumbnail" alt="...">
-=======
                 <img src="imgs/car1.jpg" class="w-75 p-3 img-thumbnail" alt="...">
->>>>>>> Stashed changes
                 <div class="carousel-caption d-none d-md-block">
                   <h5></h5>
                   <p>"Los que sueñan de día son conscientes de muchas cosas que escapan a los que sueñan sólo de noche".
@@ -82,24 +65,14 @@
                 </div>
               </div>
               <div class="carousel-item">
-<<<<<<< Updated upstream
-                <img src="https://i.ytimg.com/vi/HsD__RCMOXE/maxresdefault.jpg" class="d-block w-80 img-thumbnail"
-                  alt="...">
-=======
                 <img src="imgs/car2.jpg" class="w-75 p-3 img-thumbnail" alt="...">
->>>>>>> Stashed changes
                 <div class="carousel-caption d-none d-md-block">
                   <h5>La más amplia galería de libros en línea.</h5>
                   <p>Agenda una cita con un libro ahora mismo.</p>
                 </div>
               </div>
               <div class="carousel-item">
-<<<<<<< Updated upstream
-                <img src="https://mascultura.mx/wp-content/uploads/2019/01/John-Katzenbach-2-fb.png"
-                  class="d-block w-75 img-thumbnail" alt="...">
-=======
                 <img src="imgs/car3.png" class="w-75 p-3 img-thumbnail" alt="...">
->>>>>>> Stashed changes
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Entrevista con John Katzenbach en exclusiva.</h5>
                   <p>Autor del gran libro "El Psicoanalísta"</p>
@@ -125,22 +98,6 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Top 7 libros para formar hábitos de lectura.</h5>
-<<<<<<< Updated upstream
-              <p class="card-text">Cortesía de Mariano Trejo, en este video se muestran 7 libros para empezar a leer y generar hábito de lectura para principiantes.</p>
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=YxdyHNZZRXc&ab_channel=MarianoTrejo" allowfullscreen></iframe>
-              </div>
-            </div>
-            
-          </div>
-          <hr>
-
-          <h1>Boletín de noticiaS</h1>
-          <!--Desplegables-->
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" img src="..." class="rounded mx-auto d-block" alt="..."> 
-=======
               <p class="card-text">Cortesía de Mariano Trejo, en este video se muestran 7 libros para empezar a leer y
                 generar hábito de lectura para principiantes.</p>
               <div class="embed-responsive embed-responsive-16by9">
@@ -159,21 +116,16 @@
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
               <h2 class="accordion-header" img src="..." class="rounded mx-auto d-block" alt="...">
->>>>>>> Stashed changes
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                   Audiolibros, ¿Amenzados por la tecnología?
                 </button>
               </h2>
               <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-<<<<<<< Updated upstream
-                <img src="https://www.elsoldemexico.com.mx/cultura/literatura/r5v3tx-pexels-stas-knop/alternates/LANDSCAPE_320/pexels-stas-knop-" class="w-10 p-3 img-thumbnail" alt="..."> <div class="accordion-body">La Inteligencia Artificial (IA) ya comenzó a transformar el mundo de los
-=======
                 <img
                   src="https://www.elsoldemexico.com.mx/cultura/literatura/r5v3tx-pexels-stas-knop/alternates/LANDSCAPE_320/pexels-stas-knop-"
                   class="w-10 p-3 img-thumbnail" alt="...">
                 <div class="accordion-body">La Inteligencia Artificial (IA) ya comenzó a transformar el mundo de los
->>>>>>> Stashed changes
                   audiolibros, debido a su capacidad de generar locuciones fluidas y sin la necesidad de utilizar un
                   narrador humano</div>
               </div>
@@ -186,16 +138,11 @@
                 </button>
               </h2>
               <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-<<<<<<< Updated upstream
-                <img src="https://www.elsoldemexico.com.mx/cultura/mcr735-estante.jpg/alternates/LANDSCAPE_320/Estante.jpg" class="w-10 p-3 img-thumbnail" alt="...">
-                <div class="accordion-body">Esta es una oferta diversa en la que encontrarás una opción para iniciar a los niños en la lectura de la poesía.</div>
-=======
                 <img
                   src="https://www.elsoldemexico.com.mx/cultura/mcr735-estante.jpg/alternates/LANDSCAPE_320/Estante.jpg"
                   class="w-10 p-3 img-thumbnail" alt="...">
                 <div class="accordion-body">Esta es una oferta diversa en la que encontrarás una opción para iniciar a
                   los niños en la lectura de la poesía.</div>
->>>>>>> Stashed changes
               </div>
             </div>
             <div class="accordion-item">
@@ -206,93 +153,16 @@
                 </button>
               </h2>
               <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-<<<<<<< Updated upstream
-                <img src="https://www.elsoldemexico.com.mx/gossip/pz92ho-rosa-montero.jpg/alternates/LANDSCAPE_320/Rosa%20Montero.jpg" class="w-10 p-3 img-thumbnail" alt="...">
-                <div class="accordion-body">Rosa Montero Y Oliver Truc escribieron La desconocida, un thriller con la trata de personas como telón de fondo</div>
-=======
                 <img
                   src="https://www.elsoldemexico.com.mx/gossip/pz92ho-rosa-montero.jpg/alternates/LANDSCAPE_320/Rosa%20Montero.jpg"
                   class="w-10 p-3 img-thumbnail" alt="...">
                 <div class="accordion-body">Rosa Montero Y Oliver Truc escribieron La desconocida, un thriller con la
                   trata de personas como telón de fondo</div>
->>>>>>> Stashed changes
               </div>
             </div>
           </div>
           <hr>
 
-<<<<<<< Updated upstream
-          <div class="container-fluid">
-           
-          
-          <div class="container text-center-align">
-            <div class="row">
-              <div class="col w-100 p-3">
-                <!--Card 1-->
-          <div class="col w-100 p-3 ">
-            <div class="card w-100 p-3 img-thumbnail">
-              <img src="/imgs/tolkien.jpg" width="auto">
-  
-  
-              <div class="card-body">
-                <h5 class="card-title">J.R.R Tolkien: A Biography</h5>
-                <p class="card-text">¡No te pierdas la biografía del aclamado escritor de la saga de Game of Thrones!</p>
-                <a href="#" class="btn btn-primary">Descargar</a>
-              </div>
-            </div>
-          </div>
-              </div>
-              <div class="col">
-                 <!--Card 2-->
-          <div class="col w-100 p-3 ">
-            <div class="card w-100 p-3 img-thumbnail">
-              <img src="/imgs/tolkien.jpg" width="auto">
-  
-  
-              <div class="card-body">
-                <h5 class="card-title">J.R.R Tolkien: A Biography</h5>
-                <p class="card-text">¡No te pierdas la biografía del aclamado escritor de la saga de Game of Thrones!</p>
-                <a href="#" class="btn btn-primary">Descargar</a>
-              </div>
-            </div>
-          </div>
-              </div>
-              <div class="col">
-                <!--Card 2-->
-         <div class="col w-100 p-3 ">
-           <div class="card w-100 p-3 img-thumbnail">
-             <img src="/imgs/tolkien.jpg" width="auto">
- 
- 
-             <div class="card-body">
-               <h5 class="card-title">J.R.R Tolkien: A Biography</h5>
-               <p class="card-text">¡No te pierdas la biografía del aclamado escritor de la saga de Game of Thrones!</p>
-               <a href="#" class="btn btn-primary">Descargar</a>
-             </div>
-           </div>
-         </div>
-             </div>
-             <div class="col">
-              <!--Card 2-->
-       <div class="col w-100 p-3 ">
-         <div class="card w-100 p-3 img-thumbnail">
-           <img src="/imgs/tolkien.jpg" width="auto">
-
-
-           <div class="card-body">
-             <h5 class="card-title">J.R.R Tolkien: A Biography</h5>
-             <p class="card-text">¡No te pierdas la biografía del aclamado escritor de la saga de Game of Thrones!</p>
-             <a href="#" class="btn btn-primary">Descargar</a>
-           </div>
-         </div>
-       </div>
-           </div>
-              
-            </div>
-
-            
-          </div>
-=======
           <h1 style="color: white;">Libros de la Semana</h1>
           <div class="container-fluid">
 
@@ -304,7 +174,7 @@
                   <!--Card 1-->
                   <div class="col w-100 p-3 ">
                     <div class="card w-100 p-3 img-thumbnail">
-                      <img src="/imgs/tolkien.jpg" width="auto">
+                      <img src="imgs/tolkien.jpg" width="auto">
 
 
                       <div class="card-body">
@@ -329,7 +199,7 @@
                   <!--Card 2-->
                   <div class="col w-auto p-3">
                     <div class="card w-100 p-3 img-thumbnail">
-                      <img src="/imgs/confi.jpg" width="auto">
+                      <img src="imgs/confi.jpg" width="auto">
 
 
                       <div class="card-body">
@@ -358,7 +228,7 @@
                   <!--Card 3-->
                   <div class="col w-100 p-3 ">
                     <div class="card w-100 p-3 img-thumbnail">
-                      <img src="/imgs/shine.jpg" width="auto">
+                      <img src="imgs/shine.jpg" width="auto">
 
 
                       <div class="card-body">
@@ -378,8 +248,8 @@
                 </div>
                 <div class="col">
                   <!--Card 4-->
-                  <div class="col w-100 p-3 ">
-                    <div class="card w-100 p-3 img-thumbnail">
+                  <div class="col w-auto p-3 ">
+                    <div class="card w-auto p-3 img-thumbnail">
                       <img
                         src="https://images.cdn1.buscalibre.com/fit-in/360x360/6a/f8/6af8c92bc9ae00c40dbda298bcc1f892.jpg"
                         width="auto">
@@ -409,7 +279,6 @@
 
 
             </div>
->>>>>>> Stashed changes
 
           </div>
 
@@ -417,16 +286,6 @@
         </div>
         <HR>
         </HR>
-<<<<<<< Updated upstream
-       
-      </div>
-
-    </div>
-</body>
-
-</html>
-</php>
-=======
 
       </div>
 
@@ -472,4 +331,3 @@
 </body>
 
 </html>
->>>>>>> Stashed changes
