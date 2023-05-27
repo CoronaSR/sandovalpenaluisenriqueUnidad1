@@ -1,7 +1,9 @@
+/*Color de Fondo Principal*/
 .bg-main{
     background-image: linear-gradient(to right, #c3d9fd 0%, #d5e2fd 51%, #cfb5fb 100%);
 }
 
+/*Contenedor de una Vista Principal*/
 .view-main{
     height: 100vh;
     display: flex;
@@ -12,10 +14,19 @@
     padding: 30px 20px;
 }
 
+.view-main-image{
+    background: rgba(0, 0, 0, 0.7) url(https://4.bp.blogspot.com/--UpFf4XDSJY/VgBAXI-MZ-I/AAAAAAAAGAU/5SsOwET7Woo/s1600/parallel-universe-image.jpg) no-repeat center center; 
+    background-size: cover;
+    background-blend-mode: darken;
+    color: #ffffff;
+}
+
+/*Fuente Arial*/
 .font-1{
     font-family: arial;
 }
 
+/*Estilo del Botones Principal*/
 .button-main{
     font-family: Verdana;
     background-color: #1f2261;
@@ -25,6 +36,16 @@
     border: 3px solid #7279f9;
 }
 
+/*Estilo de Boton Secundario*/
+.boton{
+    font-family: verdana;
+    background-color: #bbbef8;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 1px solid #7279f9;
+}
+
+/*Estilo de botones collapse*/
 .button-collapse{
     background-color: #fcfafa;
     width: 100%;
@@ -33,21 +54,96 @@
     grid-template-columns: 90% 10%;
 }
 
+/*Contenedores de informacion de Collapse*/
 .information{
     background-color: #ffffff;
     padding: 20px 10px 5px;
 }
 
+/*Color de texto*/
 .color-title{
     color: #bbbef8;
 }
 
+/*Color de texto*/
 .color-subtitle{
     color: #1f2261;
 }
 
+/*Color de texto*/
+.color-aditional{
+    color: #e9efff;
+}
+
+/*Linea*/
 .line{
     background-color: #1f2261;
     height: 2px;
     margin: 10px 0px;
+}
+
+/*Estilo para los Inputs*/
+.campo{
+    border: 2px solid #bbbef8;
+    padding: 10px;
+    width: 70%;
+    margin: 10px;
+}
+
+/*Restriccion de Textarea (Comentarios)*/
+textarea{
+    resize: none;
+}
+
+/*Contenedor del formulario de Registro*/
+.registroForm{
+    display: none;
+}
+
+/*Contenedor del formulario de Recuperar Contraseña*/
+.recuperarForm{
+    display: none;
+}
+
+/*Opciones de para cambiar de formulario
+L-C: de Login a Crear Cuenta (vicebersa)
+L-R: de Login a Recuperar Contraseña (vicebersa)*/
+.change_L-C,
+.change_L-R{
+    cursor: pointer;
+    color: #c3d9fd;
+}
+
+/*Estilo de anclas en Mapa del Sitio*/
+a{
+    white-space: nowrap;
+    color: black;
+    text-decoration: none;
+}a:hover{
+    text-decoration: underline;
+}
+
+/*Contenedor de Buzon*/
+.buzon{
+    margin: 0px;
+    padding: 40px 20px;
+    background-color: #000000;
+    text-align: center;
+    color: white;
+}
+
+/*Contenedor del Mapa del Sitio*/
+.mapa{
+    margin: 0px;
+    padding: 40px 20px;
+    background: transparent;
+    text-align: center;
+}
+
+/*Contenedor del Contacto*/
+.contacto{
+    margin: 0px;
+    padding: 20px;
+    background-color: #e9efff;
+    text-align: center;
 }
