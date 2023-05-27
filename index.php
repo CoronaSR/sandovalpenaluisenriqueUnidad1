@@ -10,12 +10,6 @@
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
-        .view-main{
-            background: rgba(0, 0, 0, 0.7) url(https://4.bp.blogspot.com/--UpFf4XDSJY/VgBAXI-MZ-I/AAAAAAAAGAU/5SsOwET7Woo/s1600/parallel-universe-image.jpg) no-repeat center center; 
-            background-size: cover;
-            background-blend-mode: darken;
-            color: #ffffff;
-        }
         .descripcion{
             margin: 30px 0px;
             height: 50vh;
@@ -24,53 +18,6 @@
             width: 100%;
             height: 50vh;
         }
-        .faq{
-            margin-bottom: 5px;
-        }
-
-
-        .buzon{
-            margin: 0px;
-            padding: 40px 20px;
-            background-color: #000000;
-            text-align: center;
-            color: white;
-        }
-
-
-        .mapa{
-            margin: 0px;
-            padding: 40px 20px;
-            background: transparent;
-            text-align: center;
-        }
-
-
-        .contacto{
-            margin: 0px;
-            padding: 20px;
-            background-color: #e9efff;
-            text-align: center;
-        }
-
-        a{
-            white-space: nowrap;
-            color: black;
-            text-decoration: none;
-        }a:hover{
-            text-decoration: underline;
-        }
-
-        .campo{
-            border: 2px solid #bbbef8;
-            padding: 10px;
-            width: 70%;
-            margin: 10px;
-        }
-
-        textarea{
-            resize: none;
-        }
     </style>
 </head>
 <body class="bg-main">
@@ -78,7 +25,7 @@
 
 
 <!--Presentacion-->
-<div class="view-main">
+<div class="view-main view-main-image">
     <div class="container mb-4 text-center">
         <h1 class="font-1 color-title"><b>Nuevos Mundos te Esperan</b></h1>
     </div>
@@ -129,7 +76,7 @@
 
 
 <!--Ayuda (Preguntas Frecuentes)-->
-<div class="container faq">
+<div class="container">
 
     <div class="container-fluid mb-4" align="center">
         <h4>Preguntas Frecuentes</h4>
@@ -179,7 +126,7 @@
     <div class="row" align="start">
         <div class="col-3">
             <div class="mb-2"><b>Servicios</b></div>
-            <a href="">Iniciar Sesion</a><br>
+            <a href="login.php">Iniciar Sesion</a><br>
             <a href="">Registrarme</a><br>
             <a href="">Recuperar Contraseña</a>
         </div>

@@ -1,4 +1,3 @@
-<!--Cadena de conexion a la Base de Datos-->
 <?php
 class Conexion extends PDO
 {

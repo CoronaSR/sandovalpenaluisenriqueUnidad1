@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,40 +16,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <style>
-        .view-main{
-            background: rgba(0, 0, 0, 0.7) url(https://4.bp.blogspot.com/--UpFf4XDSJY/VgBAXI-MZ-I/AAAAAAAAGAU/5SsOwET7Woo/s1600/parallel-universe-image.jpg) no-repeat center center; 
-            background-size: cover;
-            background-blend-mode: darken;
-            color: #ffffff;
-        }
-
-
-        .campo{
-            border: 2px solid #bbbef8;
-            padding: 10px;
-            width: 70%;
-            margin: 10px;
-        }
-
-        .registroForm{
-            display: none;
-        }
-
-        .recuperarForm{
-            display: none;
-        }
-
-        .change_L-C,
-        .change_L-R{
-            cursor: pointer;
-            color: #c3d9fd;
-        }
-    </style>
+    <!--SweetAlert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body class="bg-main">
 
-<div class="view-main">
+<div class="view-main view-main-image">
 
     <div class="container" align="center">
         <h1 class="color-title mb-4"><b>A través de la Lectura</b></h1>
@@ -108,6 +85,8 @@
 
 </div>
 
+<script src="js/script.js"></script>
+
 <script type="text/javascript">
     /*Cambiar Formulario de Login a Registro y vicebersa*/
     $('.change-view .change_L-C').click(function(){
@@ -131,6 +110,8 @@
 <?php
 require_once "funciones.php";
 
+
+//ACCION PARA INSERTAR UN NUEVO REGISTRO
 if (isset($_POST['Crear'])) {
     $C_Nombre = $_POST['C-Nombre'];
     $C_Correo = $_POST['C-Correo'];
@@ -140,18 +121,25 @@ if (isset($_POST['Crear'])) {
     $Crear = consulta($C_Correo);
 
     if ($Crear) {
-        // FALTA: Alertar que el correo ya esta dado de alta
+            echo '<script>
+                mensajeError("Correo Invalido", "El correo ya esta dado de alta");
+            </script>';
     } else {
         $Registrar = registrar($C_Nombre,$C_Correo,$C_Contrasena);
 
         if ($Registrar == 1) {
-            //FALTA: Mensaje de Exito u enviar al inicio
+            $_SESSION['Usuario'] = $C_Correo;
+            go("inicio.php");
         } else {
-            //FALTA: Mensaje de Error
+            echo '<script>
+                mensajeError("Error en el Proceso", "El usuario no fue dado de alta");
+            </script>';
         }
     }
 }
 
+
+//ACCION PARA VALIDAR CORREO EN RECUPERAR CONTRASEÑA
 if (isset($_POST['Recuperar'])) {
     $R_Correo = $_POST['R-Correo'];
 
@@ -159,12 +147,19 @@ if (isset($_POST['Recuperar'])) {
     $Recuperar = consulta($R_Correo);
 
     if ($Recuperar) {
-        //FALTA: Enviar correo
+        $EnviarCorreo = enviarCorreo($R_Correo);
+        $_SESSION['Correo'] = $R_Correo;
+        $_SESSION['CodigoRecibido'] = $EnviarCorreo;
+        go("cambiar_contrasena.php");
     } else {
-        //FALTA: Alertar de que no existe el correo
+        echo '<script>
+            mensajeError("Correo Invalido", "El correo no esta registrado");
+        </script>';
     }
 }
 
+
+//ACCION PARA VALIDAR CREDENCIALES ACCESO
 if (isset($_POST['Loguear'])) {
     $L_Correo = $_POST['L-Correo'];
     $L_Contrasena = $_POST['L-Contrasena'];
@@ -176,13 +171,18 @@ if (isset($_POST['Loguear'])) {
         $Contrasena = $Loguear['contrasena'];
 
         if ($Contrasena == $L_Contrasena) {
-            //FALTA: Enviar al inicio
+            $_SESSION['Usuario'] = $L_Correo;
+            go("inicio.php");
         } else {
-            //FALTA: Mensaje de error
+            echo '<script>
+                mensajeError("Acceso Denegado", "El correo/contraseña es incorrecto");
+            </script>';
         }
 
     } else {
-        //FALTA: Mensaje de Error en credenciales de acceso
+            echo '<script>
+                mensajeError("Acceso Denegado", "El correo/contraseña es incorrecto");
+            </script>';
     }
 }
 ?>
