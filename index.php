@@ -22,8 +22,6 @@
 </head>
 <body class="bg-main">
 
-
-
 <!--Presentacion-->
 <div class="view-main view-main-image">
     <div class="container mb-4 text-center">
@@ -127,8 +125,8 @@
         <div class="col-3">
             <div class="mb-2"><b>Servicios</b></div>
             <a href="login.php">Iniciar Sesion</a><br>
-            <a href="">Registrarme</a><br>
-            <a href="">Recuperar Contraseña</a>
+            <a href="login.php#registro">Registrarme</a><br>
+            <a href="login.php#recuperar">Recuperar Contraseña</a>
         </div>
         <div class="col-3">
             <div class="mb-2"><b>Asistencia</b></div>

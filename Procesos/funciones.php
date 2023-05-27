@@ -54,13 +54,6 @@ function actualizar($Correo,$Contrasena) {
     }
 }
 
-/*Funcion para cambiar de vista*/
-function go($Interfaz) {
-    echo "<script>
-    window.location.href = '".$Interfaz."';
-    </script>";
-}
-
 /*Funcion para Enviar Correo*/
 function enviarCorreo($Destinatario){
     require 'PHPMailer/Exception.php';

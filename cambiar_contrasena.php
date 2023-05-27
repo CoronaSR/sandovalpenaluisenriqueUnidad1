@@ -29,7 +29,7 @@ session_start();
 	<div class="container" align="center">
 		<form method="post" action="" id="validarCodigoForm">
 			<label>Ingresa el Codigo Recibido</label><br>
-			<input type="number" id="CodigoIngresado" class="campo" placeholder="Ejemplo: 123456">
+			<input type="number" id="CodigoIngresado" class="campo" placeholder="Ejemplo: 123456" required>
 			<div class="mt-1">
 				<button type="sumbit" class="boton">Continuar</button>
 			</div>
@@ -37,10 +37,11 @@ session_start();
 
 		<form method="post" action="" id="changeForm">
 			<h4 class="color-title"><b>Nueva Contraseña</b></h4>
-			<input type="password" id="New_Contrasena" class="campo" placeholder="Ingresa una Contraseña">
-			<input type="password" id="RNew_Contrasena" class="campo" placeholder="Repite la Contraseña">
-			<div class="mt-1">
-				<button type="sumbit" class="boton">Continuar</button>
+			<input type="password" id="New_Contrasena" class="campo" placeholder="Ingresa una Contraseña" required oninput="vc()">
+			<input type="password" id="RNew_Contrasena" class="campo" placeholder="Repite la Contraseña" required oninput="validarCoincidencia()"><br>
+            <i id="error"></i>
+			<div class="mt-3">
+				<button type="sumbit" class="boton" id="Continuar">Continuar</button>
 			</div>
 		</form>
 	</div>
@@ -49,6 +50,34 @@ session_start();
 <script src="js/script.js"></script>
 
 <script type="text/javascript">
+
+    function vc() {
+        var pass1 = document.getElementById("New_Contrasena").value;
+        var pass2 = document.getElementById("RNew_Contrasena").value;
+
+        if (pass1 !== pass2) {
+            document.getElementById("Continuar").disabled = true;
+            document.getElementById("error").innerHTML = "Las contraseñas deben coincidir";
+        } else {
+            document.getElementById("Continuar").disabled = false;
+            document.getElementById("error").innerHTML = "";
+        }   
+    }
+
+    function validarCoincidencia() {
+        var password1 = document.getElementById("New_Contrasena").value;
+        var password2 = document.getElementById("RNew_Contrasena").value;
+
+        if (password1 !== password2) {
+            document.getElementById("error").innerHTML = "Las contraseñas deben coincidir";
+            document.getElementById("Continuar").disabled = true;
+        } else {
+            document.getElementById("error").innerHTML = "";
+            document.getElementById("Continuar").disabled = false;
+        }
+    }
+
+
 	$(document).ready(function() {
 		$('#validarCodigoForm').submit(function(e) {
 		    e.preventDefault(); // Prevenir el envío del formulario por defecto
@@ -61,7 +90,7 @@ session_start();
             // Realizar la petición AJAX
             $.ajax({
                 type: 'POST',
-                url: 'validarCodigo.php', // Archivo PHP para procesar los datos en el servidor
+                url: 'Procesos/validarCodigo.php', // Archivo PHP para procesar los datos en el servidor
                 data: { Codigo: Codigo }, // Se envia el dato
                 success: function(response) {
                     // Manejar la respuesta del servidor aquí
@@ -85,13 +114,15 @@ session_start();
             // Realizar la petición AJAX
             $.ajax({
                 type: 'POST',
-                url: 'aprobarContrasena.php', // Archivo PHP para procesar los datos en el servidor
+                url: 'Procesos/aprobarContrasena.php', // Archivo PHP para procesar los datos en el servidor
                 data: { Psw: newContrasena }, // Se envia el dato
                 success: function(response) {
                     // Manejar la respuesta del servidor aquí
                     if (response == 1) {
-                        mensajeExito("Contraseña Actualizada","login.php");
-                        //window.location.href = "index.php";
+                        mensajeExito("Contraseña Actualizada");
+                        setTimeout(function() {
+                            window.location.href = "login.php";
+                        }, 4000);
                     } else {
                         // Mensaje de error
                         mensajeError("Error en el Proceso", "Intente nuevamente");

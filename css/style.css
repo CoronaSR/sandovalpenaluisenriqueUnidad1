@@ -90,6 +90,12 @@
     margin: 10px;
 }
 
+/*Quitar el elemento caracteristico de los inputs type number*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
 /*Restriccion de Textarea (Comentarios)*/
 textarea{
     resize: none;

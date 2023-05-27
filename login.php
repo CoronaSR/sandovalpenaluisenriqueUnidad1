@@ -30,11 +30,11 @@ session_start();
         <form method="post" action="" class="loginForm L-R L-C" id="loginForm">
             <h4 class="color-aditional mb-3"><b>Iniciar Sesión</b></h4>
             <!--Campos del formulario-->
-            <input type="e-mail" name="L-Correo" id="L-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
-            <input type="password" name="L-Contrasena" id="L-Contrasena" class="campo" placeholder="Ingresa tu Contraseña">
+            <input type="e-mail" name="L-Correo" id="L-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Ingresa una dirección de correo electrónico válida">
+            <input type="password" name="L-Contrasena" id="L-Contrasena" class="campo" placeholder="Ingresa tu Contraseña" required>
             <!--Boton para Ejecutar-->
             <div class="mt-3">
-                <button type="sumbit" class="boton" name="Loguear">Iniciar Sesion</button>
+                <button type="sumbit" class="boton">Iniciar Sesion</button>
             </div>
             <!--Opcion para cambiar a formulario de Login-->
             <div class="mt-3 change-view">
@@ -54,26 +54,28 @@ session_start();
                 </div>
             </div>
             <!--Campos del formulario-->
-            <form method="post" action="">
-            <input type="e-mail" name="R-Correo" id="R-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
-            <!--Boton para Ejecutar-->
-            <div class="mt-3">
-                <button type="sumbit" class="boton" name="Recuperar">Recuperar</button>
-            </div>
+            <form method="post" action="" id="recuperarForm">
+                <input type="e-mail" name="R-Correo" id="R-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off" pattern="[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$" required title="Ingresa una dirección de correo electrónico válida">
+                <!--Boton para Ejecutar-->
+                <div class="mt-3">
+                    <button type="sumbit" class="boton">Recuperar</button>
+                </div>
             </form>
         </div>
 
         <!--Fomulario de Registro-->
-        <form method="post" action="" class="registroForm L-C">
+        <form method="post" action="" class="registroForm L-C" id="registroForm">
             <h4 class="color-aditional mb-3"><b>Crear Cuenta</b></h4>
             <!--Campos del formulario-->
-            <input type="text" name="C-Nombre" id="C-Nombre" class="campo" placeholder="Ingresa tu Nombre" autocomplete="off">
-            <input type="e-mail" name="C-Correo" id="C-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off">
-            <input type="password" name="C-Contrasena" id="C-Contrasena" class="campo" placeholder="Ingresa tu Contraseña">
-            <input type="password" name="C-RContrasena" id="C-RContrasena" class="campo" placeholder="Repite la Contraseña">
+            <input type="text" name="C-Nombre" id="C-Nombre" class="campo" placeholder="Ingresa tu Nombre" autocomplete="off" required>
+            <input type="e-mail" name="C-Correo" id="C-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off" pattern="[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$" required title="Ingresa una dirección de correo electrónico válida">
+            <input type="password" name="C-Contrasena" id="C-Contrasena" class="campo" placeholder="Ingresa tu Contraseña" required oninput="vc()">
+            <input type="password" name="C-RContrasena" id="C-RContrasena" class="campo" placeholder="Repite la Contraseña" required oninput="validarCoincidencia()">
+            <br>
+            <i id="error"></i>
             <!--Boton para Ejecutar-->
             <div class="mt-3">
-                <button type="sumbit" class="boton" name="Crear">Crear Cuenta</button>
+                <button type="sumbit" class="boton" id="Crear" disabled>Crear Cuenta</button>
             </div>
             <!--Opcion para cambiar a formulario de Login-->
             <div class="mt-3 change-view">
@@ -96,6 +98,124 @@ session_start();
     $('.change-view .change_L-R').click(function(){
         $('.L-R').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
+
+    function vc() {
+        var pass1 = document.getElementById("C-Contrasena").value;
+        var pass2 = document.getElementById("C-RContrasena").value;
+
+        if (pass1 !== pass2) {
+            document.getElementById("Crear").disabled = true;
+            document.getElementById("error").innerHTML = "Las contraseñas deben coincidir";
+        } else {
+            document.getElementById("Crear").disabled = false;
+            document.getElementById("error").innerHTML = "";
+        }   
+    }
+
+    function validarCoincidencia() {
+        var password1 = document.getElementById("C-Contrasena").value;
+        var password2 = document.getElementById("C-RContrasena").value;
+
+        if (password1 !== password2) {
+            document.getElementById("error").innerHTML = "Las contraseñas deben coincidir";
+            document.getElementById("Crear").disabled = true;
+        } else {
+            document.getElementById("error").innerHTML = "";
+            document.getElementById("Crear").disabled = false;
+        }
+    }
+
+    $(document).ready(function() {
+        $('#loginForm').submit(function(e) {
+            e.preventDefault(); // Prevenir el envío del formulario por defecto
+
+            var Correo = $('#L-Correo').val();
+            var Contrasena = $('#L-Contrasena').val();
+
+            // Realizar la petición AJAX
+            $.ajax({
+                type: 'POST',
+                url: 'Procesos/loguear.php', // Archivo PHP para procesar los datos en el servidor
+                data: { Psw: Contrasena, Correo: Correo }, // Se envia el dato
+                success: function(response) {
+                    // Manejar la respuesta del servidor aquí
+                    if (response == 1) {
+                        window.location.href = "inicio.php";
+                    } else if (response == 2) {
+                        mensajeError("Acceso Denegado", "El correo/contraseña es incorrecto");
+                    } else {
+                        mensajeError("Error en el Proceso", "Intente nuevamente");
+                    }
+                }
+            });
+        });
+
+        $('#registroForm').submit(function(e) {
+            e.preventDefault(); // Prevenir el envío del formulario por defecto
+
+            var Nombre = $('#C-Nombre').val();
+            var Correo = $('#C-Correo').val();
+            var Contrasena = $('#C-Contrasena').val();
+
+            // Realizar la petición AJAX
+            $.ajax({
+                type: 'POST',
+                url: 'Procesos/registrar.php', // Archivo PHP para procesar los datos en el servidor
+                data: { Correo: Correo, Psw: Contrasena, Nombre: Nombre }, // Se envia el dato
+                success: function(response) {
+                    // Manejar la respuesta del servidor aquí
+                    if (response == 1) {
+                        window.location.href = "inicio.php";
+                    } else if (response == 2) {
+                        campoInvalido("Correo Invalido", "El correo ya esta registrado");
+                    } else {
+                        mensajeError("Error en el Proceso", "Intente nuevamente");
+                    }
+                }
+            });
+        });
+
+        $('#recuperarForm').submit(function(e) {
+            e.preventDefault(); // Prevenir el envío del formulario por defecto
+
+            var Correo = $('#R-Correo').val();
+
+            // Realizar la petición AJAX
+            $.ajax({
+                type: 'POST',
+                url: 'Procesos/recuperar.php', // Archivo PHP para procesar los datos en el servidor
+                data: { Correo: Correo}, // Se envia el dato
+                success: function(response) {
+                    // Manejar la respuesta del servidor aquí
+                    if (response == 1) {
+                        window.location.href = "cambiar_contrasena.php";
+                    } else if (response == 2) {
+                        mensajeError("Correo Invalido", "El correo no esta registrado");
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var hash = window.location.hash;
+        if (hash === '#registro') {
+            // Mostrar el formulario de registroForm
+            $('.registroForm').show();
+            $('.loginForm').hide();
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var hash = window.location.hash;
+        if (hash === '#recuperar') {
+            // Mostrar el formulario de registroForm
+            $('.recuperarForm').show();
+            $('.loginForm').hide();
+        }
+    });
 </script>
 
     <!-- JS Boostrap -->
@@ -106,83 +226,3 @@ session_start();
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
-
-<?php
-require_once "funciones.php";
-
-
-//ACCION PARA INSERTAR UN NUEVO REGISTRO
-if (isset($_POST['Crear'])) {
-    $C_Nombre = $_POST['C-Nombre'];
-    $C_Correo = $_POST['C-Correo'];
-    $C_Contrasena = $_POST['C-Contrasena'];
-
-    //Funcion para consultar si el correo ya esta registrado
-    $Crear = consulta($C_Correo);
-
-    if ($Crear) {
-            echo '<script>
-                mensajeError("Correo Invalido", "El correo ya esta dado de alta");
-            </script>';
-    } else {
-        $Registrar = registrar($C_Nombre,$C_Correo,$C_Contrasena);
-
-        if ($Registrar == 1) {
-            $_SESSION['Usuario'] = $C_Correo;
-            go("inicio.php");
-        } else {
-            echo '<script>
-                mensajeError("Error en el Proceso", "El usuario no fue dado de alta");
-            </script>';
-        }
-    }
-}
-
-
-//ACCION PARA VALIDAR CORREO EN RECUPERAR CONTRASEÑA
-if (isset($_POST['Recuperar'])) {
-    $R_Correo = $_POST['R-Correo'];
-
-    //Funcion para consultar si el correo ya esta registrado
-    $Recuperar = consulta($R_Correo);
-
-    if ($Recuperar) {
-        $EnviarCorreo = enviarCorreo($R_Correo);
-        $_SESSION['Correo'] = $R_Correo;
-        $_SESSION['CodigoRecibido'] = $EnviarCorreo;
-        go("cambiar_contrasena.php");
-    } else {
-        echo '<script>
-            mensajeError("Correo Invalido", "El correo no esta registrado");
-        </script>';
-    }
-}
-
-
-//ACCION PARA VALIDAR CREDENCIALES ACCESO
-if (isset($_POST['Loguear'])) {
-    $L_Correo = $_POST['L-Correo'];
-    $L_Contrasena = $_POST['L-Contrasena'];
-
-    //Funcion para consultar si el correo ya esta registrado
-    $Loguear = consulta($L_Correo);
-
-    if ($Loguear) {
-        $Contrasena = $Loguear['contrasena'];
-
-        if ($Contrasena == $L_Contrasena) {
-            $_SESSION['Usuario'] = $L_Correo;
-            go("inicio.php");
-        } else {
-            echo '<script>
-                mensajeError("Acceso Denegado", "El correo/contraseña es incorrecto");
-            </script>';
-        }
-
-    } else {
-            echo '<script>
-                mensajeError("Acceso Denegado", "El correo/contraseña es incorrecto");
-            </script>';
-    }
-}
-?>

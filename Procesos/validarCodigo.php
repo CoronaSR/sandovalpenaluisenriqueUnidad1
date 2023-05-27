@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-//$codigoRecibido = $_SESSION['CodigoRecibido'];
-$codigoRecibido = 234; //Quitar
+$codigoRecibido = $_SESSION['CodigoRecibido'];
 $codigoIngresado = $_POST['Codigo'];
 
 if ($codigoRecibido == $codigoIngresado) {
