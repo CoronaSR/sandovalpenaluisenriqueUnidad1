@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/leer.png" alt="favicon">
-	<title>A través de la Lectura</title>
+    <title>A través de la Lectura</title>
     <!--Boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!--CSS-->
@@ -32,13 +32,13 @@
         <p class="fs-4" align="center"><i>"La lectura te puede transportar a escenarios maravillosos en donde con ayuda de tu imaginacion puedes convertirte en el actor principal. Tu mente es el portal y la lectura un mundo sin igual. No tengas miedo a adentrarte al mundo de la lectura, no tengas miedo a vivir nuevas aventuras. Voces claman por un heroe, ¿Acudiras al llamado?"</i></p>
     </div>
 
-    <button class="button-main mt-4">Empezar</button>
+    <a href="login.php" class="button-main mt-4">Empezar</a>
 </div>
 
 
 
 <!--Informacion-->
-<div class="row align-items-center descripcion">
+<div class="row align-items-center descripcion" style="padding-top: 40px;">
     <div class="col-6">
         <img src="https://definicion.de/wp-content/uploads/2009/06/genero-fantastico.jpg" class="img">
     </div>
@@ -74,14 +74,14 @@
 
 
 <!--Ayuda (Preguntas Frecuentes)-->
-<div class="container">
+<div class="container mt-3" id="FAQ" style="padding-top: 40px;">
 
     <div class="container-fluid mb-4" align="center">
         <h4>Preguntas Frecuentes</h4>
     </div>
     <!--Collapse-->
     <button class="button-collapse align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-        <div class="text-start color-subtitle">¿De que trata el proyecto?</div>
+        <div class="text-start color-subtitle"><li>¿De que trata el proyecto?</li></div>
         <div><ion-icon name="chevron-down-outline"></ion-icon></div>
     </button>
 
@@ -93,25 +93,61 @@
 
     <!--Collapse-->
     <button class="button-collapse align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-        <div class="text-start color-subtitle">¿Como accedo a los libros?</div>
+        <div class="text-start color-subtitle"><li>¿Como accedo a los libros?</li></div>
         <div><ion-icon name="chevron-down-outline"></ion-icon></div>
     </button>
 
     <div class="collapse" id="collapse2">
         <div class="information">
-            <p>Para poder acceder al los libros que tenemos disponibles, primero debes de tener una cuenta. Si todavia no tienes una cuenta haz <a href="#">clic aqui</a></p>
+            <p>Para poder acceder al los libros que tenemos disponibles, primero debes de tener una cuenta. Si todavia no tienes una cuenta haz <a href="login.php#registro" class="a-help"><b>clic aqui</b></a></p>
         </div>
     </div>
 
     <!--Collapse-->
     <button class="button-collapse align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-        <div class="text-start color-subtitle">¿Como descargo un libro?</div>
+        <div class="text-start color-subtitle"><li>¿Como descargo un libro?</li></div>
         <div><ion-icon name="chevron-down-outline"></ion-icon></div>
     </button>
 
     <div class="collapse" id="collapse3">
         <div class="information">
-            <p>Para descargar un libro ...</p>
+            <p>Para descargar un libro debes dar clic en el boton descargar que aparece junto a la informacion del libro que deseas.</p>
+        </div>
+    </div>
+    
+    <!--Collapse-->
+    <button class="button-collapse align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+        <div class="text-start color-subtitle"><li>¿Puedo obtener los libros en formato fisico?</li></div>
+        <div><ion-icon name="chevron-down-outline"></ion-icon></div>
+    </button>
+
+    <div class="collapse" id="collapse4">
+        <div class="information">
+            <p>Los libros que ofrecemos solo son accesibles en formato digital, nuestro equipo no se dedica a la venta de libros.</p>
+        </div>
+    </div>
+    
+    <!--Collapse-->
+    <button class="button-collapse align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+        <div class="text-start color-subtitle"><li>¿Cuanto cuesta la suscripción?</li></div>
+        <div><ion-icon name="chevron-down-outline"></ion-icon></div>
+    </button>
+
+    <div class="collapse" id="collapse5">
+        <div class="information">
+            <p>El acceso a los libros es TOTALMENTE GRATUITO. Nosotros no cobramos ni pedimos donaciones para ofrecer este servicio.</p>
+        </div>
+    </div>
+    
+    <!--Collapse-->
+    <button class="button-collapse align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+        <div class="text-start color-subtitle"><li>Tengo problemas al crear una cuenta ¿Que debo hacer?</li></div>
+        <div><ion-icon name="chevron-down-outline"></ion-icon></div>
+    </button>
+
+    <div class="collapse" id="collapse6">
+        <div class="information">
+            <p>Algunas de las razones por la que no se puede crear una cuenta, es porque el correo ya esta dado de alta o es invalido, de cualquier modo verifica que la informacion que proporcionas es correcta.</p>
         </div>
     </div>
 </div>
@@ -119,30 +155,32 @@
 
 
 <!--Mapa del Sitio-->
-<div class="mapa">
+<div class="mapa" id="Mapa" style="padding-top: 60px; padding-bottom: 60px;">
     <h4 class="mb-5">Mapa del Sitio</h4>
-    <div class="row" align="start">
+    <div class="row">
         <div class="col-3">
             <div class="mb-2"><b>Servicios</b></div>
-            <a href="login.php">Iniciar Sesion</a><br>
-            <a href="login.php#registro">Registrarme</a><br>
-            <a href="login.php#recuperar">Recuperar Contraseña</a>
+            <a href="login.php" class="a-map">Iniciar Sesion</a><br>
+            <a href="login.php#registro" class="a-map">Registrarme</a><br>
+            <a href="login.php#recuperar" class="a-map">Recuperar Contraseña</a>
         </div>
         <div class="col-3">
             <div class="mb-2"><b>Asistencia</b></div>
-            <a href="">Chat en Linea</a><br>
-            <a href="">Buzon</a><br>
-            <a href="">Contactanos</a>
+            <a href="" class="a-map">Chat en Linea</a><br>
+            <a href="index.php#Buzon" class="a-map">Buzon</a><br>
+            <a href="index.php#Contacto" class="a-map">Contactanos</a>
         </div>
         <div class="col-3">
             <div class="mb-2"><b>Ayuda</b></div>
-            <a href="">Preguntas Frecuentes</a><br>
-            <a href="">Mapa del Sitio</a>
+            <a href="index.php#FAQ" class="a-map">Preguntas Frecuentes</a><br>
+            <a href="index.php#Mapa" class="a-map">Mapa del Sitio</a>
         </div>
         <div class="col-3">
             <div class="mb-2"><b>Sobre Nosostros</b></div>
-            <a href="">Mision</a><br>
-            <a href="">Vision</a>
+            <a href="informacion.php#mision" class="a-map">Mision</a><br>
+            <a href="informacion.php#vision" class="a-map">Vision</a><br>
+            <a href="informacion.php#objetivos" class="a-map">Objetivos</a><br>
+            <a href="informacion.php#compromiso" class="a-map">Compromiso</a>
         </div>
     </div>
 </div>
@@ -150,7 +188,7 @@
 
 
 <!--Contactanos-->
-<div class="contacto">
+<div class="contacto" id="Contacto">
     <h4>Contactanos</h4>
     <div class="row">
         <div class="col-8">+52 (844) 000 0022</div>
@@ -164,7 +202,7 @@
 
 
 <!--Buzon-->
-<div class="buzon">
+<div class="buzon" id="Buzon">
     <h4 class="color-title">Queremos Escucharte</h4>
 
     <div>
