@@ -8,7 +8,7 @@ function mensajeError(titulo, texto) {
 }
 
 
-function mensajeExito(title, vista) {
+function mensajeExito(title) {
   Swal.fire({
     title: title,
     icon: 'success',
@@ -18,10 +18,6 @@ function mensajeExito(title, vista) {
     focusConfirm: false,
     allowOutsideClick: false
   })
-
-  setTimeout(function() {
-    window.location.href = vista;
-  }, 4000);
 }
 
 

@@ -1,6 +1,3 @@
-<?php  
-
-?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <style type="text/css">
     .row{
@@ -27,7 +24,7 @@
       margin-top: 0; /* remove the gap so it doesn't close */
     }
 </style>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><img src="img/leer.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       A través de la lectura</a>
@@ -37,38 +34,41 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <div class="dropdown">
+          <div class="dropdown" id="option1">
             <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">
               <i class="bi bi-star-fill" style="font-size: 2rem; color: white;"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Recuperar</a></li>
-              <li><a class="dropdown-item" href="#">Registro</a></li>
-              <li><a class="dropdown-item" href="#">Acceder</a></li>
+              <li><a class="dropdown-item" href="login.php#recuperar">Recuperar</a></li>
+              <li><a class="dropdown-item" href="login.php#registro">Registro</a></li>
+              <li><a class="dropdown-item" href="login.php">Acceder</a></li>
             </ul>
           </div>
         </li>
         <li class="nav-item">
-          <div class="dropdown">
+          <div class="dropdown" id="option2">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">
               <i class="bi bi-plus-circle" style="font-size: 2rem; color: white;"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Buzón</a></li>
-              <li><a class="dropdown-item" href="#">Ayuda</a></li>
-              <li><a class="dropdown-item" href="#">Contacto</a></li>
-              <li><a class="dropdown-item" href="#">Mapa</a></li>
+              <li><a class="dropdown-item" href="index.php#Buzon">Buzón</a></li>
+              <li><a class="dropdown-item" href="index.php#FAQ">Ayuda</a></li>
+              <li><a class="dropdown-item" href="index.php#Contacto">Contacto</a></li>
+              <li><a class="dropdown-item" href="index.php#Mapa">Mapa</a></li>
               <li><a class="dropdown-item" href="chatbot.php">Chat</a></li>
             </ul>
           </div>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Libros y autores" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit"><i class="bi bi-search" style="font-size: 1rem;"></i></button>
+      <form class="d-flex" role="search" method="post" action="">
+        <input class="form-control me-2 elementosearch" type="search" name="parametroBusqueda" placeholder="Libros" aria-label="Search">
+        <button class="btn btn-outline-light elementosearch" type="submit" name="buscar"><i class="bi bi-search" style="font-size: 1rem;"></i></button>
       </form>
-      <div class="ms-1">
-        <button type="button" class="btn btn-outline-success">Acceder</button>
+      <div class="ms-1" id="acceder">
+        <a href="login.php" class="btn btn-outline-warning">Acceder</a>
+      </div>
+      <div class="ms-1" id="inicio">
+        <a href="index.php" class="btn btn-outline-warning">Volver</a>
       </div>
     </div>
   </div>
