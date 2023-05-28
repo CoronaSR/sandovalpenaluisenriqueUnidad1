@@ -1,6 +1,19 @@
 <?php
-session_start();
+    session_start();
+
+    if (!empty($_SESSION['Usuario'])) {
+        echo "<script>
+            window.location.href = 'inicio.php';
+        </script>";
+    } else {
+        if (empty($_SESSION['Correo']) AND empty($_SESSION['CodigoRecibido'])) {
+            echo "<script>
+                window.location.href = 'error.php';
+            </script>";
+        }
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +45,7 @@ session_start();
 			<label>Ingresa el Codigo Recibido</label><br>
 			<input type="number" id="CodigoIngresado" class="campo" placeholder="Ejemplo: 123456" required>
 			<div class="mt-1">
-				<button type="sumbit" class="boton">Continuar</button>
+                <button type="sumbit" class="boton">Continuar</button>
 			</div>
 		</form>
 

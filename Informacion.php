@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if (!empty($_SESSION['Usuario'])) {
+        echo "<script>
+            window.location.href = 'inicio.php';
+        </script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,34 +23,38 @@
             height: 150px;
             width: 150px;
         }
+
+        .seccion{
+            padding: 110px 40px 110px 40px;
+        }
     </style>
 </head>
 <body class="bg-main">
     
     <div class="p-5" align="center">
         
-        <div class="m-2 p-3 rounded bg-info-subtle" id="mision">
+        <div class="m-3 rounded bg-info-subtle seccion" id="mision">
             <h4 class="mb-3">Misión</h4>
             <div class="line"></div>
             <p>"Promover la imaginación, el pensamiento crítico y la pasión por la lectura a través de la exploración del mundo de la literatura fantástica. Nuestra misión es transportar a los lectores a universos mágicos, estimular su creatividad y abrir sus mentes a nuevas posibilidades. Buscamos fomentar el amor por la lectura, cultivar la fantasía y enriquecer la vida de las personas a través de la magia de los libros fantásticos."</p>
             <img src="https://cdn-icons-png.flaticon.com/128/2856/2856325.png" class="img">
         </div>
         
-        <div class="m-2 p-3 rounded bg-success-subtle" id="vision">
+        <div class="m-2 rounded bg-success-subtle seccion" id="vision">
             <h4 class="mb-3">Visión</h4>
             <div class="line"></div>
             <p>"Nuestra visión es crear una plataforma de lectura de libros fantásticos que transporte a los lectores a mundos imaginarios llenos de magia, aventura y emocionantes historias. Queremos fomentar el amor por la lectura y despertar la imaginación de las personas, ofreciendo una amplia selección de libros de género fantástico de diferentes autores y estilos.</p>
             <img src="https://cdn-icons-png.flaticon.com/128/921/921490.png" class="img">
         </div>
         
-        <div class="m-2 p-3 rounded bg-danger-subtle" id="objetivos">
+        <div class="m-2 rounded bg-danger-subtle seccion" id="objetivos" style="padding-top: 110px; padding-bottom: 110px;">
             <h4 class="mb-3">Objetivos</h4>
             <div class="line"></div>
             <p>Nuestro objetivo es convertirnos en el destino preferido de los amantes de la literatura fantástica, brindando una experiencia única y envolvente. Queremos proporcionar un espacio donde los lectores puedan descubrir nuevas obras, conectarse con otros aficionados, intercambiar opiniones y explorar los límites de la imaginación a través de la lectura.</p>
             <img src="https://cdn-icons-png.flaticon.com/128/3050/3050488.png" class="img">
         </div>
         
-        <div class="m-2 p-3 rounded bg-warning-subtle" id="compromiso">
+        <div class="m-2 rounded bg-warning-subtle seccion" id="compromiso" style="padding-top: 110px; padding-bottom: 110px;">
             <h4 class="mb-3">Compromiso</h4>
             <div class="line"></div>
             <p>Nos esforzamos por ofrecer una plataforma fácil de usar, accesible desde cualquier dispositivo, que ofrezca una biblioteca digital diversa y actualizada constantemente con nuevos lanzamientos y clásicos del género. Además, nos comprometemos a promover a autores emergentes y darles la oportunidad de dar a conocer sus obras a una audiencia apasionada.</p>

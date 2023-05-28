@@ -1,5 +1,11 @@
 <?php
-session_start();
+    session_start();
+
+    if (!empty($_SESSION['Usuario'])) {
+        echo "<script>
+            window.location.href = 'inicio.php';
+        </script>";
+    }
 ?>
 
 

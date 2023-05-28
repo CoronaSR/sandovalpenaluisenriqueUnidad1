@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (!empty($_SESSION['Usuario'])) {
+        echo "<script>
+            window.location.href = 'inicio.php';
+        </script>";
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/leer.png" alt="favicon">
     <title>A través de la Lectura</title>
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--Boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!--SweetAlert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
@@ -38,7 +50,7 @@
 
 
 <!--Informacion-->
-<div class="row align-items-center descripcion" style="padding-top: 40px;">
+<div class="row align-items-center descripcion">
     <div class="col-6">
         <img src="https://definicion.de/wp-content/uploads/2009/06/genero-fantastico.jpg" class="img">
     </div>
@@ -48,6 +60,7 @@
         <p class="fs-5">Encuentra las mejores historias sobre aventura, fantasia y ciencia ficción.</p>
     </div>
 </div>
+
 
 <div class="row align-items-center descripcion">
     <div class="col-6">
@@ -59,6 +72,7 @@
         <img src="https://pbs.twimg.com/media/EOgSIxQX0AEFdxg.jpg" class="img">
     </div>
 </div>
+
 
 <div class="row align-items-center descripcion">
     <div class="col-6">
@@ -74,7 +88,7 @@
 
 
 <!--Ayuda (Preguntas Frecuentes)-->
-<div class="container mt-3" id="FAQ" style="padding-top: 40px;">
+<div class="container mt-3" id="FAQ" style="padding-top: 110px; padding-bottom: 80px;">
 
     <div class="container-fluid mb-4" align="center">
         <h4>Preguntas Frecuentes</h4>
@@ -155,7 +169,7 @@
 
 
 <!--Mapa del Sitio-->
-<div class="mapa" id="Mapa" style="padding-top: 60px; padding-bottom: 60px;">
+<div class="mapa" id="Mapa" style="padding-top: 110px; padding-bottom: 110px;">
     <h4 class="mb-5">Mapa del Sitio</h4>
     <div class="row">
         <div class="col-3">
@@ -190,11 +204,12 @@
 <!--Contactanos-->
 <div class="contacto" id="Contacto">
     <h4>Contactanos</h4>
-    <div class="row">
-        <div class="col-8">+52 (844) 000 0022</div>
+    <div class="row align-items-center">
+        <div class="col-8"><b class="text-danger">+52 (844) 000 0022</b></div>
         <div class="col-4">
-            <ion-icon name="logo-facebook"></ion-icon>
-            <ion-icon name="mail"></ion-icon>
+            <a href="https://github.com/CoronaSR/sandovalpenaluisenriqueUnidad1"><ion-icon name="logo-github" style="font-size: 40px; color: black;"></ion-icon></a>
+            <a href="https://github.com/CoronaSR/sandovalpenaluisenriqueUnidad1"><ion-icon name="logo-facebook" style="font-size: 40px; color: blue;"></ion-icon></a>
+            <a href="https://github.com/CoronaSR/sandovalpenaluisenriqueUnidad1"><ion-icon name="mail" style="font-size: 40px; color: darkred;"></ion-icon></a>
         </div>
     </div>
 </div>
@@ -204,15 +219,51 @@
 <!--Buzon-->
 <div class="buzon" id="Buzon">
     <h4 class="color-title">Queremos Escucharte</h4>
+    <form method="post" action="" id="buzonForm">
+        <div>
+            <input class="campo" type="e-mail" id="Correo" placeholder="Introduce tu Correo" pattern="[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$" required title="Ingresa una dirección de correo electrónico válida">
+            <textarea class="campo" id="Opinion" placeholder="Escribe tu Opinión" required></textarea>
+        </div>
 
-    <div>
-        <input class="campo" type="e-mail" name="Correo" placeholder="Introduce tu Correo">
-        <textarea class="campo" placeholder="Escribe tu Opinión"></textarea>
-    </div>
-
-    <button class="boton mt-1">Enviar</button>
+        <button type="submit" class="boton mt-1">Enviar</button>
+    </form>
 </div>
 
+<script type="text/javascript">
+    var cElectronico = document.getElementById("Correo");
+    var comentario = document.getElementById("Opinion");
+
+    $(document).ready(function() {
+        $('#buzonForm').submit(function(e) {
+            e.preventDefault(); // Prevenir el envío del formulario por defecto
+
+            var correo = $('#Correo').val();
+            var opinion = $('#Opinion').val();
+
+            // Realizar la petición AJAX
+            $.ajax({
+                type: 'POST',
+                url: 'Procesos/comentario.php', // Archivo PHP para procesar los datos en el servidor
+                data: { Opinion: opinion, Correo: correo }, // Se envia el dato
+                success: function(response) {
+                    // Manejar la respuesta del servidor aquí
+                    if (response == 1) {
+                        Swal.fire({
+                            title: "Proceso Exitoso",
+                            text: "El mensaje se ha enviado",
+                            icon: 'success'
+                        })
+
+                        cElectronico.value = '';
+                        comentario.value = '';
+                    } else if (response == 2) {
+                        mensajeError("Mensaje no Enviado", "Intente nuevamente");
+                    }
+                }
+            });
+        });
+    });
+</script>
     <!-- JS Boostrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>

@@ -38,6 +38,22 @@ function registrar($Nombre,$Correo,$Contrasena) {
     }
 }
 
+
+/*Funcion para hacer el registro de comentarios*/
+function buzon($Correo,$Texto) {
+    $conexion = new conexion();
+    $Guardar = $conexion->prepare('INSERT INTO buzon(correo, comentario) VALUES (:correo, :comentario)');
+    $Guardar->bindParam(':correo',$Correo);
+    $Guardar->bindParam(':comentario',$Texto);
+    $Guardar->execute();
+
+    if ($Guardar) {
+        return 1;
+    } else {
+        return false;
+    }
+}
+
 /*Funcion para actualizar contraseña*/
 function actualizar($Correo,$Contrasena) {
 
