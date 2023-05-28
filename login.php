@@ -24,9 +24,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--SweetAlert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style type="text/css">
+        #acceder{
+            display: none;
+        }.elementosearch{
+            display: none;
+        }
+    </style>
 </head>
 <body class="bg-main">
-
+<?php include('navbar.php'); ?>
 <div class="view-main view-main-image">
 
     <div class="container" align="center">

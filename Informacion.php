@@ -26,11 +26,15 @@
 
         .seccion{
             padding: 110px 40px 110px 40px;
+        }.elementosearch{
+            display: none;
+        }#acceder{
+            display: none;
         }
     </style>
 </head>
 <body class="bg-main">
-    
+    <?php include('navbar.php'); ?>
     <div class="p-5" align="center">
         
         <div class="m-3 rounded bg-info-subtle seccion" id="mision">

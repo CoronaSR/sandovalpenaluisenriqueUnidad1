@@ -30,10 +30,16 @@
             width: 100%;
             height: 50vh;
         }
+
+        #inicio{
+            display: none;
+        }.elementosearch{
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-main">
-
+<?php include('navbar.php'); ?>
 <!--Presentacion-->
 <div class="view-main view-main-image">
     <div class="container mb-4 text-center">
@@ -180,7 +186,7 @@
         </div>
         <div class="col-3">
             <div class="mb-2"><b>Asistencia</b></div>
-            <a href="" class="a-map">Chat en Linea</a><br>
+            <a href="chatbot.php" class="a-map">Chat en Linea</a><br>
             <a href="index.php#Buzon" class="a-map">Buzon</a><br>
             <a href="index.php#Contacto" class="a-map">Contactanos</a>
         </div>

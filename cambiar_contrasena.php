@@ -12,6 +12,13 @@
             </script>";
         }
     }
+
+    if (isset($_POST['cancel'])) {
+        session_destroy();
+        echo "<script>
+           window.location.href = 'login.php#recuperar';
+        </script>";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +65,10 @@
 				<button type="sumbit" class="boton" id="Continuar">Continuar</button>
 			</div>
 		</form>
+
+        <form method="post" action="">
+            <button class="boton mt-2" name="cancel">Cancelar</button>
+        </form>
 	</div>
 </div>
 

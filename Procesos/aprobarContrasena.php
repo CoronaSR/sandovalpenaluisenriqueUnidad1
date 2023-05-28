@@ -9,6 +9,7 @@ $Actualizar = actualizar($Correo,$Contrasena);
 
 if ($Actualizar == 1) {
     $response = 1;
+    session_destroy();
 } else {
     $response = 2;
 }

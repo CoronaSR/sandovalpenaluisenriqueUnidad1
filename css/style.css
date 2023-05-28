@@ -137,6 +137,12 @@ L-R: de Login a Recuperar Contraseña (vicebersa)*/
     text-decoration: underline;
 }
 
+.a-download{
+    color: darkblue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /*Contenedor de Buzon*/
 .buzon{
     margin: 0px;
