@@ -15,16 +15,16 @@
 <div class="d-flex align-items-center justify-content-center vh-100">
             <div class="text-center row">
                 <div class=" col-md-4">
-                    <img src="img/error.png" alt=""
+                    <img src="https://cdn-icons-png.flaticon.com/128/3145/3145765.png" alt=""
                         class="img-fluid">
                 </div>
                 <div class=" col-md-5 mt-3">
-                    <p class="fs-3"> <span class="text-danger">Oops!</span> Se ha encontrado un error.</p>
+                    <p class="fs-3"> <span class="text-danger">Oops!</span> No se puede acceder a la vista</p>
                     <p class="lead">
-                        Contacte a soporte.
+                        Lo sentimos, realice el procedimiento correcto
                     </p>
 
-                    <button type="button" onclick='window.location.replace("../SHGAB/login.php")' class="button-main">Regresar al inicio.</button>
+                    <button type="button" onclick='window.location.replace("login.php")' class="button-main">Regresar al inicio.</button>
                 </div>
 
             </div>

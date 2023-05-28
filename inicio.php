@@ -38,7 +38,7 @@
     </style>
 </head>
 <body class="bg-main">
-    
+    <?php include('navbar.php'); ?>
     <div align="center" style="padding-top: 110px;margin-bottom: 30px;">
         <h1>Bienvenido</h1><span class="text-capitalize"><?php echo $Datos['nombre']?></span>
     </div>
