@@ -36,6 +36,12 @@
         }.elementosearch{
             display: none;
         }
+        .view-main{
+            background: rgba(0, 0, 0, 0.7) url(https://4.bp.blogspot.com/--UpFf4XDSJY/VgBAXI-MZ-I/AAAAAAAAGAU/5SsOwET7Woo/s1600/parallel-universe-image.jpg) no-repeat center center; 
+            background-size: cover;
+            background-blend-mode: darken;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body class="bg-main">
@@ -43,6 +49,7 @@
      <?php include('navbar.php'); ?>
 </div>
 <!--Presentacion-->
+<div class="view-main">
     <div class="container mb-4 text-center">
         <h1 class="font-1 color-title"><b>Nuevos Mundos te Esperan</b></h1>
     </div>
