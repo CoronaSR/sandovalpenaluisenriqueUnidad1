@@ -179,7 +179,7 @@
 
 
                       <div class="card-body">
-                        <h5 class="card-header">J.R.R Tolkien: A Biography.</h5>
+                        <h5 class="card-header">J.R.R Tolkien: A Biography</h5>
                         <p class="card-text">Autora: Humphrey Carpenter</p>
                         <p class="card-text">La biografía autorizada del creador de la Tierra Media. En las décadas
                           transcurridas desde su muerte en septiembre de 1973, millones han leído EL HOBBIT, EL SEÑOR DE

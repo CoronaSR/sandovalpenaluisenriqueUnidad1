@@ -27,6 +27,12 @@
         .faq{
             margin-bottom: 5px;
         }
+
+        #acceder{
+            display: none;
+        }.elementosearch{
+            display: none;
+        }
     </style>
 </head>
 <body>
