@@ -17,10 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>
             window.location.href = 'login.php';
         </script>";
-    } if (isset($_POST['buscar'])) {
-        $Parametro = $_POST['parametroBusqueda'];
-        //Proceso de busqueda
-    }else {
+    } else {
         $captcha = $_POST['g-recaptcha-response'];
         $secretKey = '6LdaODQmAAAAANwgfEpuL2XmO4PjYsI_mvm9kirg';
         $libro = $_POST['pdflibro'];
